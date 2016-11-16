@@ -1,0 +1,212 @@
+$white: #ffffff;
+$highlight: #2ecc71;
+$dark: #27ae60;
+$black: #000000;
+$light: #edeff5;
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper_wide {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.wrapper_skinny {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.cf:before, .cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.button {
+  color: $white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  display: inline-block;
+  min-width: 8.5rem;
+}
+
+.button_highlight {
+  background: $highlight;
+  transition: background .4s ease-in-out;
+  &:hover {
+    background: darken($highlight, 5%);
+  }
+}
+
+.button_white {
+  background: $white;
+  color: $dark;
+  transition: background .4s ease-in-out;
+  &:hover {
+    background: darken($white, 5%);
+  }
+}
+
+#main_header {
+  color: $dark;
+  background: $white;
+  padding: 2.5rem 0;
+  #logo {
+    float: left;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $black;
+    text-decoration: none;
+  }
+  nav {
+    float: right;
+    ul {
+      list-style: none;
+      margin: 0;
+      li {
+        display: inline;
+        margin-left: 2.5rem;
+        a {
+          color: $black;
+          text-decoration: none;
+        }
+        &:hover {
+          opacity: .2;
+        }
+      }
+    }
+  }
+}
+
+#banner {
+  background: $dark;
+  margin-bottom: 4rem;
+  h1 {
+    color: $white;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 0 4rem;
+    padding: 6rem 0;
+  }
+}
+
+.paginatoin_before, .pagination_after {
+  content: " ";
+  display: table;
+}
+
+.pagination_after {
+  clear: both;
+}
+
+.pagination {
+  text-align: center;
+  margin: 1rem 0 5rem 0;
+  a, .previous_page, .current, .next_page {
+    padding: 0.75rem 1rem;
+    margin: 0 .25rem;
+    line-height: 1.25;
+    text-decoration: none;
+    background: #edeff5;
+    font-weight: 700;
+    font-size: .7rem;
+    font-style: normal;
+    color: $black;
+    &:hover {
+      background: $highlight;
+      color: $white;
+    }
+  }
+  .current {
+    background: $highlight;
+    color: $white;
+  }
+  .disabled {
+    color: #c0c0c0;
+    &:hover {
+      color: #c0c0c0;
+      background: #edeff5;
+    }
+  }
+}
+
+#info {
+  background: #25373D;
+  h1 {
+    color: $white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 4rem;
+  }
+
+}
+
+#footer {
+  background: $white;
+  h1 {
+    color: $black;
+    text-align: center;
+    font-size: .75rem;
+    font-weight: 300;
+    padding: 2rem;
+  }
+}
+
+
+.field {
+  margin: .5rem 0 1.5rem 0;
+}
+
+input[type="email"], input[type="text"],input[type="password"], textarea {
+  width: 100%;
+  height: 2.5rem;
+  padding: .25rem 1rem;
+  background: $light;
+  border: 1px solid darken($light, 5%);
+  margin-top: .5rem;
+}
+
+textarea {
+  min-height: 8rem;
+  margin-top: .5rem !important;
+}
+
+#form {
+  padding: 0 0 5rem 0;
+}
+
+@import 'normalize';
+@import 'welcome';
+@import 'dakwah';
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */

@@ -1,0 +1,237 @@
+#dakwah {
+  padding-bottom: 3rem;
+  ul {
+    list-style: none;
+    padding-left: none;
+    margin: 0;
+    li {
+      width: 22%;
+      float: left;
+      margin: 0 1% 2rem 1%;
+      -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.25);
+      box-shadow: 0 1px 1px 0 rgba(0,0,0,0.25);
+      img {
+        width: 100%;
+        max-width: 100%;
+      }
+      .dakwah_overview {
+        padding: 1rem 7.5%;
+        h2 {
+          margin: 0;
+          font-size: 1rem;
+          font-weight: 700;
+          color: $black;
+        }
+        .episode_count {
+          color: lighten($black, 50%);
+          font-size: .9rem;
+          margin: .5rem 0 .25rem 0;
+        }
+      }
+      &:hover {
+        img {
+          opacity: .8;
+        }
+        .dakwah_overview {
+          h2 {
+            color: $highlight;
+          }
+        }
+      }
+    }
+  }
+}
+
+#dakwah_show {
+  #show_banner_dasbor {
+    background: $dark;
+    padding: 6rem 0 6rem 4rem;
+    h1 {
+      font-size: 2rem;
+      font-weight: 300;
+      color: $white;
+      margin:0 0 .5rem 0;
+    }
+  }
+  #show_banner {
+    background: $dark;
+    padding: 4rem 0 4rem 4rem;
+    h1 {
+      font-size: 2rem;
+      font-weight: 300;
+      color: $white;
+      margin:0 0 .5rem 0;
+    }
+
+    .description {
+      color: lighten($black, 20%);
+    }
+    .subscribe_link {
+      font-size: .6rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: $white;
+      text-decoration: none;
+      display: inline;
+      background: $highlight;
+      padding: .5rem 1rem;
+      margin: 0 .5rem 0 0;
+      &:hover {
+        background: darken($highlight, 10%);
+      }
+    }
+  }
+
+  #breadcrumb {
+    padding: 1rem 4rem;
+    border-bottom: 1px solid lighten($black, 75%);
+    font-weight: 700;
+    font-size: .7rem;
+    a {
+      text-decoration: none;
+      color: lighten($black, 45%);
+    }
+    span {
+      margin: 0 .5rem;
+    }
+  }
+  #episodes_2 {
+    padding: 3rem 0;
+    border-bottom: 1px solid lighten($black, 75%);
+    ul {
+      list-style: none;
+
+      li {
+        padding-bottom: 2rem;
+        border-bottom: 1px solid lighten($black, 75%);
+        margin-bottom: 2rem;
+        &:last-child {
+          border-bottom: none;
+        }
+        .episode_thumbnail_2 {
+          width: 22%;
+          float: left;
+          img {
+            width: 10rem;
+            max-width: 100%;
+          }
+        }
+
+        .episode_overview_2 {
+          width: 76.5%;
+          float: left;
+          margin-left: 1.5%;
+          h2 {
+            a {
+              color: $black;
+              text-decoration: none;
+              font-weight: 300;
+            }
+          }
+          .description {
+            color: lighten($black, 50%);
+          }
+          textarea {
+            width: 96%;
+            height: 80px;
+            background: #ecf0f1;
+            border: none;
+            padding: 1rem;
+            resize: none;
+          }
+          h3 {
+            font-weight: 300;
+          }
+          p,em {
+            color: lighten($black, 50%);
+          }
+        }
+      }
+    }
+  }
+
+  #episodes {
+    padding: 2rem 0;
+    ul {
+      list-style: none;
+
+      li {
+        padding-bottom: 2rem;
+        border-bottom: 1px solid lighten($black, 75%);
+        margin-bottom: 2rem;
+        &:last-child {
+          border-bottom: none;
+        }
+        .episode_thumbnail {
+          width: 22%;
+          float: left;
+          img {
+            width: 10rem;
+            max-width: 100%;
+          }
+        }
+
+        .episode_overview {
+          width: 76.5%;
+          float: left;
+          margin-left: 1.5%;
+          h2 {
+            a {
+              color: $black;
+              text-decoration: none;
+              font-weight: 300;
+            }
+          }
+          .description {
+            color: lighten($black, 50%);
+          }
+          .authorized_links {
+            font-weight: 700;
+            font-size: .8rem;
+            a {
+              color: $highlight;
+              margin-right: 1rem;
+              text-decoration: none;
+            }
+          }
+        }
+        &:hover {
+          img {
+            opacity: .8;
+          }
+          .episode_overview {
+            h2,a {
+              color: $highlight;
+            }
+          }
+        }
+      }
+    }
+  }
+  #links {
+    padding: 2rem 0;
+    ul {
+      list-style: none;
+      padding-left: 0;
+      padding: 1rem 0;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid lighten($black, 75%);
+      li {
+        display: inline;
+        margin-right: 1rem;
+        font-weight: 700;
+        a {
+          color: $black;
+          text-decoration: none;
+          &:hover {
+            color:$highlight;
+          }
+        }
+      }
+      .current {
+        color: $highlight;
+      }
+    }
+  }
+}
+
