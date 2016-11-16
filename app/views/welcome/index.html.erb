@@ -4,9 +4,14 @@
       <a href="#" id="logo">FKSPDAKWAH</a>
       <nav>
         <ul>
-          <li><a href="#">Masuk</a></li>
-          <li><a href="#">Mendaftar</a></li>
-          <li><a href="#">Tentang aplikasi</a></li>
+          <% unless member_signed_in? %>
+            <li><%= link_to "Masuk", new_member_session_path %></li>
+            <li><%= link_to "Mendaftar", new_member_registration_path %></li>
+            <li><a href="#">Tentang aplikasi</a></li>
+          <% else %>
+            <li><a href="#">Dasbor</a></li>
+            <li><%= link_to "Keluar", destroy_member_session_path, method: :delete %></li>
+          <% end %>
         </ul>
       </nav>
     </div>
