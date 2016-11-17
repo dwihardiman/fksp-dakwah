@@ -6,10 +6,10 @@
   <div id="links">
     <div class="wrapper">
        <ul>
-         <li>Episodes</li>
-         <li><a href="#">Buat dakwah</a></li>
+         <li><%= link_to "Episodes", root_path %></li>
+         <li><%= link_to "Buat dakwah", new_member_episode_path(@member) %></li>
          <li><%= link_to "Pengaturan Akun", edit_member_registration_path, class: "current" %></li>
-         <li><a href="#">Lihat Dakwah</a></li>
+         <li><%= link_to "Lihat Dakwah", member_path(current_member) %></li>
        </ul>
     </div>
   </div>
