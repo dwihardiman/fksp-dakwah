@@ -19,6 +19,7 @@
   <div id="episodes">
     <div class="wrapper">
       <ul class="cf">
+      <% @episodes.each do |episode| %>
         <li class="cf">
           <div class="episode_thumbnail">
             <a href="episode.html">
@@ -26,51 +27,12 @@
             </a>
           </div>
           <div class="episode_overview">
-            <h2><a href="#">Karena hijabku adalah wujud taatku kepada-Mu</a></h2>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In voluptate eius dolorem, laborum harum perferendis doloribus magni, amet culpa repellendus natus facere sed obcaecati! Nesciunt nihil unde ab eaque aut...</p>
+            <h2><%= link_to episode.title, member_episode_path(@member, episode) %></h2>
+            <p class="description"><%= truncate(episode.description, length: 160) %></p>
           </div>
         </li>
+        <% end %>
 
-        <li class="cf">
-          <div class="episode_thumbnail">
-            <a href="
-            #">
-              <img src="images/mblo.jpg" alt="">
-            </a>
-          </div>
-          <div class="episode_overview">
-            <h2><a href="#">Jomblo karena Allah.</a></h2>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In voluptate eius dolorem, laborum harum perferendis doloribus magni, amet culpa repellendus natus facere sed obcaecati! Nesciunt nihil unde ab eaque aut...</p>
-          </div>
-        </li>
-
-
-
-        <li class="cf">
-          <div class="episode_thumbnail">
-            <a href="
-            #">
-              <img src="images/mekah.jpg" alt="">
-            </a>
-          </div>
-          <div class="episode_overview">
-            <h2><a href="#">Seindah-indahnya peninggalan adalah ka'bah, akankah?</a></h2>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In voluptate eius dolorem, laborum harum perferendis doloribus magni, amet culpa repellendus natus facere sed obcaecati! Nesciunt nihil unde ab eaque aut...</p>
-          </div>
-        </li>
-
-        <li class="cf">
-          <div class="episode_thumbnail">
-            <a href="
-            #">
-              <img src="images/uwuwuw.jpg" alt="">
-            </a>
-          </div>
-          <div class="episode_overview">
-            <h2><a href="#">Inginku menjadi wanita solehah.</a></h2>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In voluptate eius dolorem, laborum harum perferendis doloribus magni, amet culpa repellendus natus facere sed obcaecati! Nesciunt nihil unde ab eaque aut...</p>
-          </div>
-        </li>
       </ul>
     </div>
   </div>
