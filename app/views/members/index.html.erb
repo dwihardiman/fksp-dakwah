@@ -1,0 +1,21 @@
+<div id="banner" class="dakwah_banner">
+  <h1>Temukan kebaikan dalam setiap dakwah <br> yang telah mereka bagikan.</h1>
+</div>
+
+<div id="dakwah" class="cf">
+  <div class="wrapper">
+    <ul>
+      <% @members.each do |member| %>
+        <%= link_to member do %>
+          <li>
+            <img src="images/uwuwuw.jpg" alt="">
+            <div class="dakwah_overview">
+              <h2><%= member.title %></h2>
+              <p class="episode_count">9 episode</p>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>

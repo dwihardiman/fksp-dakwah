@@ -1,0 +1,85 @@
+<div id="dakwah_show">
+  <div id="show_banner">
+    <h1><%= @member.title %></h1>
+    <p class="description"><%= @member.description %></p>
+    <% unless @member.facebook.blank? %>
+      <a href="<%= @member.facebook %>" class="subscribe_link">Facebook</a>
+    <% end %>
+    <% unless @member.instagram.blank? %>
+      <a href="<%= @member.instagram %>" class="subscribe_link">Instagram</a>
+    <% end %>
+  </div>
+
+  <div id="breadcrumb">
+    <%= link_to members_path do %>
+      Semua Dakwah <span>/</span> Dian Sastro Dakwah
+    <% end %>
+  </div>
+
+  <div id="episodes">
+    <div class="wrapper">
+      <ul class="cf">
+        <li class="cf">
+          <div class="episode_thumbnail">
+            <a href="episode.html">
+              <img src="images/diansastro.jpg" alt="">
+            </a>
+          </div>
+          <div class="episode_overview">
+            <h2><a href="#">Karena hijabku adalah wujud taatku kepada-Mu</a></h2>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In voluptate eius dolorem, laborum harum perferendis doloribus magni, amet culpa repellendus natus facere sed obcaecati! Nesciunt nihil unde ab eaque aut...</p>
+          </div>
+        </li>
+
+        <li class="cf">
+          <div class="episode_thumbnail">
+            <a href="
+            #">
+              <img src="images/mblo.jpg" alt="">
+            </a>
+          </div>
+          <div class="episode_overview">
+            <h2><a href="#">Jomblo karena Allah.</a></h2>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In voluptate eius dolorem, laborum harum perferendis doloribus magni, amet culpa repellendus natus facere sed obcaecati! Nesciunt nihil unde ab eaque aut...</p>
+          </div>
+        </li>
+
+
+
+        <li class="cf">
+          <div class="episode_thumbnail">
+            <a href="
+            #">
+              <img src="images/mekah.jpg" alt="">
+            </a>
+          </div>
+          <div class="episode_overview">
+            <h2><a href="#">Seindah-indahnya peninggalan adalah ka'bah, akankah?</a></h2>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In voluptate eius dolorem, laborum harum perferendis doloribus magni, amet culpa repellendus natus facere sed obcaecati! Nesciunt nihil unde ab eaque aut...</p>
+          </div>
+        </li>
+
+        <li class="cf">
+          <div class="episode_thumbnail">
+            <a href="
+            #">
+              <img src="images/uwuwuw.jpg" alt="">
+            </a>
+          </div>
+          <div class="episode_overview">
+            <h2><a href="#">Inginku menjadi wanita solehah.</a></h2>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In voluptate eius dolorem, laborum harum perferendis doloribus magni, amet culpa repellendus natus facere sed obcaecati! Nesciunt nihil unde ab eaque aut...</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="pagination">
+  <span class="previous_page disabled">Sebelumnya</span>
+  <em class="current">1</em>
+  <a href="#">2</a>
+  <a href="#" class="next_page">
+    Selanjutnya
+  </a>
+</div>
