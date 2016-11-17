@@ -4,13 +4,35 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
+
+  <h2>Punya akun sosial media?</h2>
+
+  <div class="field">
+    <%= f.label :facebook %><br />
+    <%= f.text_field :facebook %>
+  </div>
+
+  <div class="field">
+    <%= f.label :instagram %><br />
+    <%= f.text_field :instagram %>
+  </div>
 
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
