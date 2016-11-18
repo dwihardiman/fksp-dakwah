@@ -8,10 +8,10 @@
       <% @members.each do |member| %>
         <%= link_to member do %>
           <li>
-            <img src="images/uwuwuw.jpg" alt="">
+            <%= image_tag member.avatar.url(:medium) %>
             <div class="dakwah_overview">
               <h2><%= member.title %></h2>
-              <p class="episode_count">9 episode</p>
+              <p class="episode_count"><%= member.episodes.count %> Episode</p>
             </div>
           </li>
         <% end %>
