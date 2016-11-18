@@ -1,4 +1,6 @@
 class EpisodesController < ApplicationController
+  before_action :authenticate_member!, except: [:show]
+  before_filter :require_permission, except: [:show]
   before_action :find_member
   before_action :find_episode, only: [:show, :edit, :update, :destroy]
 
@@ -48,5 +50,12 @@ class EpisodesController < ApplicationController
 
   def find_episode
     @episode = Episode.find(params[:id])
+  end
+
+  def require_permission
+    @member = Member.find(params[:member_id])
+    if current_member != @member
+      redirect_to root_path, notice: "Maaf anda tidak diperbolehkan melihat halaman ini tanpa izin"
+    end
   end
 end
