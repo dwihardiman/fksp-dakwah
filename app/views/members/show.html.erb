@@ -37,11 +37,5 @@
     </div>
   </div>
 </div>
-<div class="pagination">
-  <span class="previous_page disabled">Sebelumnya</span>
-  <em class="current">1</em>
-  <a href="#">2</a>
-  <a href="#" class="next_page">
-    Selanjutnya
-  </a>
-</div>
+
+<%= will_paginate @episodes, previous_label: "Sebelumnya", next_label: "Selanjutnya" %>

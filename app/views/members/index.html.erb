@@ -4,7 +4,7 @@
 
 <div id="dakwah" class="cf">
   <div class="wrapper">
-    <ul>
+    <ul class="cf">
       <% @members.each do |member| %>
         <%= link_to member do %>
           <li>
@@ -17,5 +17,6 @@
         <% end %>
       <% end %>
     </ul>
+    <%= will_paginate @members, previous_label: "Sebelumnya", next_label: "Selanjutnya" %>
   </div>
 </div>
