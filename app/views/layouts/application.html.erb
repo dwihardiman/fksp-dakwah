@@ -11,33 +11,21 @@
 
   <body>
 
-  <% if alert %>
-    <p class="alert">
-      <%= alert %>
-    </p>
-  <% elsif notice%>
-    <p class="notice">
-      <%= notice %>
-    </p>
-  <% end %>
+    <% if alert %>
+      <p class="alert">
+        <%= alert %>
+      </p>
+    <% elsif notice%>
+      <p class="notice">
+        <%= notice %>
+      </p>
+    <% end %>
 
-  <header id="main_header" class="cf">
-      <div class="wrapper_wide">
-      <%= link_to "FKSPDAKWAH", root_path, id: "logo" %>
-        <nav>
-          <ul>
-            <% unless member_signed_in? %>
-              <li><%= link_to "Masuk", new_member_session_path %></li>
-              <li><a href="#">Tentang aplikasi</a></li>
-            <% else %>
-              <li><%= link_to "Dasbor", root_path %></a></li>
-              <li><%= link_to "Keluar", destroy_member_session_path, method: :delete %></li>
-            <% end %>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <% unless current_page?(root_path) %>
+      <%= render 'layouts/header' %>
+    <% end %>
 
     <%= yield %>
+
   </body>
 </html>
