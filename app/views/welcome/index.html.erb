@@ -20,87 +20,20 @@
 
 <div id="dakwah" class="cf">
   <div class="wrapper">
-    <ul>
-      <a href="#">
-        <li>
-          <%= image_tag("uwuwuw.jpg") %>
-          <div class="dakwah_overview">
-            <h2>Shelyna Zahra Dakwah</h2>
-            <p class="episode_count">9 episode</p>
-          </div>
-        </li>
-      </a>
-
-      <a href="#">
-        <li>
-          <%= image_tag("diansastro.jpg") %>
-          <div class="dakwah_overview">
-            <h2>Shelyna Zahra Dakwah</h2>
-            <p class="episode_count">9 episode</p>
-          </div>
-        </li>
-      </a>
-
-      <a href="#">
-        <li>
-          <%= image_tag("uwuwuw.jpg") %>
-          <div class="dakwah_overview">
-            <h2>Shelyna Zahra Dakwah</h2>
-            <p class="episode_count">9 episode</p>
-          </div>
-        </li>
-      </a>
-
-      <a href="#">
-        <li>
-          <%= image_tag("diansastro.jpg") %>
-          <div class="dakwah_overview">
-            <h2>Shelyna Zahra Dakwah</h2>
-            <p class="episode_count">9 episode</p>
-          </div>
-        </li>
-      </a>
-
-      <a href="#">
-        <li>
-          <%= image_tag("uwuwuw.jpg") %>
-          <div class="dakwah_overview">
-            <h2>Shelyna Zahra Dakwah</h2>
-            <p class="episode_count">9 episode</p>
-          </div>
-        </li>
-      </a>
-
-      <a href="#">
-        <li>
-          <%= image_tag("diansastro.jpg") %>
-          <div class="dakwah_overview">
-            <h2>Shelyna Zahra Dakwah</h2>
-            <p class="episode_count">9 episode</p>
-          </div>
-        </li>
-      </a>
-
-      <a href="#">
-        <li>
-          <%= image_tag("uwuwuw.jpg") %>
-          <div class="dakwah_overview">
-            <h2>Shelyna Zahra Dakwah</h2>
-            <p class="episode_count">9 episode</p>
-          </div>
-        </li>
-      </a>
-
-      <a href="#">
-        <li>
-          <%= image_tag("diansastro.jpg") %>
-          <div class="dakwah_overview">
-            <h2>Shelyna Zahra Dakwah</h2>
-            <p class="episode_count">9 episode</p>
-          </div>
-        </li>
-      </a>
+    <ul class="cf">
+      <% @members.each do |member| %>
+        <%= link_to member do %>
+          <li>
+            <%= image_tag member.avatar.url(:medium) %>
+            <div class="dakwah_overview">
+              <h2><%= member.title %></h2>
+              <p class="episode_count"><%= member.episodes.count %> Episode</p>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
     </ul>
+    <%= will_paginate @members, previous_label: "Sebelumnya", next_label: "Selanjutnya" %>
   </div>
 </div>
 
