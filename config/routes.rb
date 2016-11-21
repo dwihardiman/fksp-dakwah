@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   end
 
   root 'welcome#index'
+
+  resources 'welcome'
 end
