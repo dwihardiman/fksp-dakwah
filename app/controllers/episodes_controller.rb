@@ -41,7 +41,7 @@ class EpisodesController < ApplicationController
   private
 
   def episode_params
-    params.require(:episode).permit(:title, :description, :episode_thumbnail, :mp3)
+    params.require(:episode).permit(:title, :description, :episode_thumbnail, :mp3, :slug)
   end
 
   def find_member
@@ -49,7 +49,7 @@ class EpisodesController < ApplicationController
   end
 
   def find_episode
-    @episode = Episode.find(params[:id])
+    @episode = Episode.friendly.find(params[:id])
   end
 
   def require_permission

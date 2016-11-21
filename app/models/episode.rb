@@ -10,4 +10,11 @@ class Episode < ApplicationRecord
   def self.search(term)
     where('LOWER(title) LIKE :term OR LOWER(description) LIKE :term', term: "%#{term.downcase}%")
   end
+
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
+  def should_generate_new_friendly_id?
+    title_changed?
+  end
 end
