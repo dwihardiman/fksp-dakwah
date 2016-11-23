@@ -67,6 +67,29 @@
               </div>
             </div>
 
+            <h3>
+              <%= @episode.comments.count %> Tanggapan
+            </h3>
+
+            <div id="comments">
+              <%= render :partial => @episode.comments %>
+            </div>
+
+            <% if member_signed_in? %>
+
+            <%= simple_form_for [@member, @episode, Comment.new] do |f| %>
+              <div class="field" >
+                <%= f.text_area :body, class: "form-control" %>
+              </div>
+              <br>
+              <%= f.submit "Beri tanggapan", class: "button button_highlight" %>
+            <% end %>
+
+            <% elsif %>
+              <h3>Jadilah member untuk bisa memberi tanggapan.</h3>
+            <% end %>
+
+
           </div>
         </li>
       </ul>
