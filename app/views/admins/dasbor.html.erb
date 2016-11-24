@@ -1,0 +1,48 @@
+<header id="main_header" class="cf">
+  <div class="wrapper_wide">
+  <%= link_to "FKSPDAKWAH", root_path, id: "logo" %>
+    <nav>
+      <ul>
+          <li><%= link_to "Keluar", destroy_admin_session_path, method: :delete %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div id="dakwah_show">
+  <div id="show_banner">
+    <h1>Periksa kembali setiap dakwahnya.</h1>
+    <p class="description">Karena setiap member tidak luput dari salah :)</p>
+  </div>
+
+  <div id="breadcrumb">
+    Alhamdulillah sudah ada <%= @members.count %> member dan <%= @episodes.count %> episode dakwah terkumpul.
+  </div>
+
+  <div id="episodes">
+    <div class="wrapper">
+      <ul class="cf">
+      <% @episodes.each do |episode| %>
+        <li class="cf">
+          <div class="episode_thumbnail">
+            <a href="episode.html">
+              <%= image_tag episode.episode_thumbnail.url(:medium) %>
+            </a>
+          </div>
+          <div class="episode_overview">
+            <h2><%= link_to episode.title, admin_path(episode) %></h2>
+            <p class="description"><%= truncate(episode.description, length: 160) %></p>
+            <div class="authorized_links">
+                <%= link_to "Hapus Episode Dakwah", admin_path(episode), method: :delete, data: {confirm: "Apakah episode ini tidak sesuai, sehingga akan di hapus?"} %>
+              </div>
+          </div>
+        </li>
+        <% end %>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+<%= will_paginate @episodes, previous_label: "Sebelumnya", next_label: "Selanjutnya" %>
+
+

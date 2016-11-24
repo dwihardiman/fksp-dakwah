@@ -3,7 +3,7 @@
   <%= link_to "FKSPDAKWAH", root_path, id: "logo" %>
     <nav>
       <ul>
-        <% unless member_signed_in? %>
+        <% unless member_signed_in? || admin_signed_in? %>
           <li><%= link_to "Masuk", new_member_session_path %></li>
           <li><a href="#">Tentang aplikasi</a></li>
         <% else %>
