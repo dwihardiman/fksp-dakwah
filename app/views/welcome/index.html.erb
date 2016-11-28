@@ -1,3 +1,75 @@
+<% if params[:search] %>
+  <% @episodes.each do |episode| %>
+  <div id="dakwah_show">
+    <div id="episodes_2">
+      <div class="wrapper">
+        <ul class="cf">
+          <li class="cf">
+            <br><br><br><br><br><br>
+            <div class="episode_thumbnail_2">
+              <a href="#">
+                <%= image_tag episode.episode_thumbnail.url(:medium) %>
+              </a>
+            </div>
+            <div class="episode_overview_2">
+              <h2><%= episode.title %></h2>
+              <p class="description"><%= episode.description %></p>
+
+              <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+              <div id="jp_container_1" class="jp-audio">
+                <div class="jp-type-single">
+                  <div class="jp-gui jp-interface">
+                    <ul class="jp-controls">
+                      <li><a href="javascript:;" class="jp-play" tabindex="1">&#61515;</a></li>
+                      <li><a href="javascript:;" class="jp-pause" tabindex="1">&#61516;</a></li>
+                      <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">&#61480;</a></li>
+                      <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">&#61478;</a></li>
+                    </ul>
+
+                    <div class="jp-progress">
+                      <div class="jp-seek-bar">
+                        <div class="jp-play-bar"></div>
+                      </div>
+                    </div>
+
+                    <div class="jp-time-holder">
+                      <div class="jp-current-time"></div>
+                    </div>
+
+                    <div class="jp-volume-bar">
+                      <div class="jp-volume-bar-value"></div>
+                    </div>
+
+                    <div class="jp-no-solution">
+                      <span>Update Required</span>
+                      To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br>
+  <%= link_to "< Kembali", root_path, class: "button_back" %>
+  <script>
+    $(document).ready(function(){
+      $("#jquery_jplayer_1").jPlayer({
+        ready: function () {
+          $(this).jPlayer("setMedia", {
+            mp3: "<%= episode.mp3.url %>",
+          });
+        },
+        swfPath: "/js",
+        supplied: "mp3"
+      });
+    });
+  </script>
+<% end %>
+<% else %>
 <div id="background">
   <header class="cf">
     <div class="wrapper_wide">
@@ -13,8 +85,10 @@
   </header>
   <div class="wrapper_skinny">
     <h1>Sampaikanlah walau satu ayat, berdakwah atau mendengarkan dakwah.</h1>
-    <input type="text" id="episodes-search-txt" autofocus placeholder="Cari dakwah berdasarkan kata kunci...">
+    <%= form_tag( @member_episode_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Cari dakwah berdasarkan kata kunci, pilih, kemudian tekan enter...", id: "episodes-search-txt" %>
     <div class="results" id="episodes-search-results"></div>
+    <% end %>
   </div>
 </div>
 
@@ -47,6 +121,7 @@
     <h1>FKSPDAKWAH &copy; 2016</h1>
   </div>
 </div>
+<% end %>
 
 <script>
   $(function() {
