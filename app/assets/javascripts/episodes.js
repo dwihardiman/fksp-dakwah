@@ -20,7 +20,7 @@ app.Episodes.prototype = {
       '<img src="' + item.episode_thumbnail + '" />',
       '</span>',
       '<span class="title">' + item.title + '</span>',
-      '<span class="price">' + item.description + ' ' + item.published_at + '</span>'
+      '<span class="price">' + item.description + '</span>'
     ];
     return $('<li>')
       .append(markup.join(''))
