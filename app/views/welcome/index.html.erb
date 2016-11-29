@@ -89,6 +89,13 @@
     <%= text_field_tag :search, params[:search], placeholder: "Cari dakwah berdasarkan kata kunci, pilih, kemudian tekan enter...", id: "episodes-search-txt" %>
     <div class="results" id="episodes-search-results"></div>
     <% end %>
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function(){
+        $('#episodes-search-results').click(function(){
+          $('#search-form').submit()
+        });
+      });
+    </script>
   </div>
 </div>
 
