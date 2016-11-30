@@ -78,7 +78,7 @@
         <ul>
           <li><%= link_to "Masuk", new_member_session_path %></li>
           <li><%= link_to "Mendaftar", new_member_registration_path %></li>
-          <li><a href="#">Tentang aplikasi</a></li>
+          <li><%= link_to "Tentang Aplikasi", about_index_path %></li>
         </ul>
       </nav>
     </div>
@@ -86,7 +86,7 @@
   <div class="wrapper_skinny">
     <h1>Sampaikanlah walau satu ayat, berdakwah atau mendengarkan dakwah.</h1>
     <%= form_tag( @member_episode_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Cari dakwah berdasarkan kata kunci, pilih, kemudian tekan enter...", id: "episodes-search-txt" %>
+    <%= text_field_tag :search, params[:search], placeholder: "Cari dakwah berdasarkan kata kunci...", id: "episodes-search-txt" %>
     <div class="results" id="episodes-search-results"></div>
     <% end %>
     <script type="text/javascript" charset="utf-8">

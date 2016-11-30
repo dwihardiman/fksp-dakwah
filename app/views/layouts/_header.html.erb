@@ -1,3 +1,6 @@
+<% if controller_name == 'about' %>
+
+<% else %>
 <header id="main_header" class="cf">
   <div class="wrapper_wide">
   <%= link_to "FKSPDAKWAH", root_path, id: "logo" %>
@@ -5,7 +8,8 @@
       <ul>
         <% unless member_signed_in? || admin_signed_in? %>
           <li><%= link_to "Masuk", new_member_session_path %></li>
-          <li><a href="#">Tentang aplikasi</a></li>
+          <li><%= link_to "Mendaftar", new_member_registration_path %></li>
+          <li><%= link_to "Tentang Aplikasi", about_index_path %></li>
         <% else %>
           <li><%= link_to "Dasbor", root_path %></a></li>
           <li><%= link_to "Keluar", destroy_member_session_path, method: :delete %></li>
@@ -14,3 +18,4 @@
     </nav>
   </div>
 </header>
+<% end %>
