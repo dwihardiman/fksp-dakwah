@@ -1,4 +1,13 @@
 #dakwah {
+
+    .all-member {
+      background: $highlight;
+      color: $white;
+      padding: .5rem;
+      margin: 50px;
+      text-decoration: none;
+    }
+
   padding-bottom: 3rem;
   ul {
     list-style: none;
@@ -64,7 +73,7 @@
     }
 
     .description {
-      color: lighten($black, 20%);
+      color: $white;
     }
     .subscribe_link {
       font-size: .6rem;
