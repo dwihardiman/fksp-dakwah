@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
   def index
     @members = Member.all.limit(8).order("created_at DESC")
+    @members_all = Member.all
 
     if params[:search]
       @episodes = Episode.search(params[:search]).order("created_at DESC")
