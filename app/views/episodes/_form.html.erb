@@ -1,25 +1,25 @@
 <%= form_for ([@member, @episode]) do |f| %>
 
   <div class="field">
-    <%= f.label :title %> <br>
+    <%= f.label :Judul_episode %> <br>
     <%= f.text_field :title %>
   </div>
 
   <div class="field">
-    <%= f.label :description %> <br>
+    <%= f.label :Deskripsi_singkat_episode %> <br>
     <%= f.text_area :description %>
   </div>
 
   <div class="field">
-    <%= f.label :episode_thumbnail %> <br>
+    <%= f.label :gambar_episode %> <br>
     <%= f.file_field :episode_thumbnail %>
   </div>
 
   <div class="field">
-    <%= f.label :mp3 %> <br>
+    <%= f.label :Audio_episode %> <br>
     <%= f.file_field :mp3 %>
   </div>
 
-<%= f.submit class: "button button_highlight" %>
+<%= f.submit "Simpan episode", class: "button button_highlight" %>
 
 <% end %>

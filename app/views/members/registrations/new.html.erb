@@ -9,7 +9,7 @@
       <%= devise_error_messages! %>
 
       <div class="field">
-        <%= f.label :title %><br />
+        <%= f.label :Judul %><br />
         <%= f.text_field :title, autofocus: true %>
       </div>
 
@@ -24,15 +24,15 @@
       </div>
 
       <div class="field">
-        <%= f.label :password %>
+        <%= f.label :katasandi %>
         <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <em>(Setidaknya lebih dari <%= @minimum_password_length %> karakter)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :Konfirmasi_katasandi %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
 

@@ -21,12 +21,12 @@
       <%= devise_error_messages! %>
 
       <div class="field">
-        <%= f.label :title %><br />
+        <%= f.label :Judul %><br />
         <%= f.text_field :title, autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label :description %><br />
+        <%= f.label :Deskripsi_anda %><br />
         <%= f.text_field :description %>
       </div>
 
@@ -57,26 +57,26 @@
       </div>
 
       <div class="field">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+        <%= f.label :katasandi %> <i>(Biarkan kosong apabila tidak ada perubahan)</i><br />
         <%= f.password_field :password, autocomplete: "off" %>
         <% if @minimum_password_length %>
           <br />
-          <em><%= @minimum_password_length %> characters minimum</em>
+          <em>Setidaknya lebih dari <%= @minimum_password_length %> karakter</em>
         <% end %>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :konfirmasi_katasandi %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
 
       <div class="field">
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.label :katasandi_lama %> <i>(diperlukan untuk konfirmasi perubahan akun)</i><br />
         <%= f.password_field :current_password, autocomplete: "off" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Update", class: "button button_highlight" %>
+        <%= f.submit "Perbarui", class: "button button_highlight" %>
       </div>
     <% end %>
 
